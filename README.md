@@ -34,8 +34,8 @@ personal-website/
 ### 1. 下载模板
 
 ```bash
-git clone https://github.com/your-username/personal-website.git
-cd personal-website
+git clone https://github.com/Eternity-Sky/teek.git
+cd teek
 ```
 
 ### 2. 自定义配置
@@ -321,11 +321,6 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 📞 支持
 
-如果你遇到问题或有建议，请：
-
-1. 查看 [Issues](https://github.com/your-username/personal-website/issues)
-2. 创建新的Issue
-3. 发送邮件到你的邮箱
 
 ---
 
