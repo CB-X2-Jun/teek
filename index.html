@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span id="nav-name">个人主页</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">关于</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">项目</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#websites" class="nav-link">网站</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">联系</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 首页部分 -->
+        <section id="home" class="section">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-content">
+                        <div class="avatar">
+                            <img id="avatar-img" src="https://via.placeholder.com/150" alt="头像">
+                        </div>
+                        <h1 id="hero-name">你的名字</h1>
+                        <p id="hero-title">你的职位</p>
+                        <p id="hero-description">你的简介描述</p>
+                        <div class="hero-buttons">
+                            <a href="#about" class="btn btn-primary">了解更多</a>
+                            <a href="#contact" class="btn btn-secondary">联系我</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 关于部分 -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">关于我</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p id="about-description">在这里写你的详细介绍...</p>
+                        <div class="skills">
+                            <h3>技能</h3>
+                            <div id="skills-list" class="skills-grid">
+                                <!-- 技能标签将通过JavaScript生成 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目部分 -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">项目展示</h2>
+                <div id="projects-grid" class="projects-grid">
+                    <!-- 项目卡片将通过JavaScript生成 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 网站部分 -->
+        <section id="websites" class="section">
+            <div class="container">
+                <h2 class="section-title">我的网站</h2>
+                <div id="websites-grid" class="websites-grid">
+                    <!-- 网站卡片将通过JavaScript生成 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系部分 -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">联系我</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div id="contact-details" class="contact-details">
+                            <!-- 联系信息将通过JavaScript生成 -->
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h3>社交媒体</h3>
+                        <div id="social-links" class="social-grid">
+                            <!-- 社交链接将通过JavaScript生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="current-year">2024</span> <span id="footer-name">你的名字</span>. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- 主题选择器 -->
+    <div id="theme-selector" class="theme-selector">
+        <div class="theme-selector-content">
+            <h3>选择主题</h3>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="default">默认</button>
+                <button class="theme-option" data-theme="dark">深色</button>
+                <button class="theme-option" data-theme="blue">蓝色</button>
+                <button class="theme-option" data-theme="green">绿色</button>
+                <button class="theme-option" data-theme="purple">紫色</button>
+                <button class="theme-option" data-theme="orange">橙色</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
