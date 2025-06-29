@@ -3,10 +3,10 @@
 
 const CONFIG = {
     // 基本信息
-    name: "张三",
+    name: "Shine",
     title: "全栈开发工程师",
     description: "热爱编程，专注于Web开发和人工智能技术。擅长前端、后端开发和系统架构设计。",
-    avatar: "https://via.placeholder.com/150", // 替换为你的头像URL
+    avatar: "https://tc.z.wiki/autoupload/YWOgi7YZfm09uQYpPHO3Bn2CGrBAcpoqgZ2QrHjpPCCyl5f0KlZfm6UsKj-HyTuv/20250628/65K4/350X350/image.png", // 替换为你的头像URL
     
     // 关于我
     about: "我是一名充满激情的开发者，拥有5年的Web开发经验。我热爱学习新技术，喜欢解决复杂的技术问题。在工作中，我注重代码质量和用户体验，致力于创建优秀的软件产品。",
