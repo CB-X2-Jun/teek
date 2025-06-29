@@ -1,4 +1,4 @@
-# 个人主页模板
+# TEEK - 个人主页模板
 
 一个功能丰富的个人主页模板，支持多种主题、响应式设计和自定义配置。专为GitHub Pages设计，可以轻松部署和自定义。
 
@@ -18,7 +18,7 @@
 ## 📁 文件结构
 
 ```
-personal-website/
+teek/
 ├── index.html          # 主页面
 ├── css/
 │   ├── style.css       # 主要样式
@@ -321,7 +321,13 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 
 ## 📞 支持
 
+如果你遇到问题或有建议，请：
+
+1. 查看 [Issues](https://github.com/Eternity-Sky/teek/issues)
+2. 创建新的Issue
 
 ---
 
 ⭐ 如果这个模板对你有帮助，请给个Star！
+
+**TEEK** - 让个人主页更简单、更美观、更专业。
