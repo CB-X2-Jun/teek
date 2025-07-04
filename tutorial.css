@@ -1,0 +1,402 @@
+/* 教程页面样式 */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --border-color: #e9ecef;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.tutorial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    min-height: 100vh;
+    box-shadow: var(--shadow);
+}
+
+/* 头部样式 */
+.tutorial-header {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.header-content .logo {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    background: white;
+    padding: 8px;
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* 导航样式 */
+.tutorial-nav {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tutorial-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0 2rem;
+    overflow-x: auto;
+    gap: 0;
+}
+
+.tutorial-nav li {
+    flex-shrink: 0;
+}
+
+.tutorial-nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.tutorial-nav a:hover,
+.tutorial-nav a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* 内容样式 */
+.tutorial-content {
+    padding: 2rem;
+}
+
+.tutorial-section {
+    margin-bottom: 3rem;
+}
+
+.tutorial-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tutorial-section h2 i {
+    font-size: 1.5rem;
+}
+
+.content-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.content-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.content-box h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.content-box p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.content-box ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.content-box li {
+    margin-bottom: 0.5rem;
+}
+
+/* 代码块样式 */
+.code-block {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 1rem;
+    font-family: 'Fira Code', 'Consolas', 'Menlo', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.code-block code {
+    color: #333;
+}
+
+/* 文件结构样式 */
+.file-structure {
+    background: #2d3748;
+    color: #e2e8f0;
+    border-radius: 6px;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.file-structure pre {
+    margin: 0;
+    padding: 1rem;
+    font-family: 'Fira Code', 'Consolas', 'Menlo', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 步骤框样式 */
+.step-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.step-number {
+    background: var(--primary-color);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.step-content p {
+    margin-bottom: 0.5rem;
+}
+
+.step-content ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+/* 提示框样式 */
+.tip-box {
+    background: #e3f2fd;
+    border: 1px solid #2196f3;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.tip-box h4 {
+    color: #1976d2;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tip-box ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+/* 主题网格样式 */
+.theme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.theme-item {
+    text-align: center;
+}
+
+.theme-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin: 0 auto 0.5rem;
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-preview:hover {
+    transform: scale(1.05);
+}
+
+.default-theme { background: linear-gradient(45deg, #007bff, #0056b3); }
+.dark-theme { background: linear-gradient(45deg, #1a1a1a, #333); }
+.blue-theme { background: linear-gradient(45deg, #0056b3, #004085); }
+.green-theme { background: linear-gradient(45deg, #28a745, #1e7e34); }
+.purple-theme { background: linear-gradient(45deg, #6f42c1, #5a2d91); }
+.orange-theme { background: linear-gradient(45deg, #fd7e14, #e55a00); }
+
+/* FAQ样式 */
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* 页脚样式 */
+.tutorial-footer {
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content p {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: #0056b3;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .tutorial-header {
+        padding: 2rem 1rem;
+    }
+    
+    .header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .tutorial-nav ul {
+        padding: 0 1rem;
+    }
+    
+    .tutorial-nav a {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .tutorial-content {
+        padding: 1rem;
+    }
+    
+    .content-box {
+        padding: 1.5rem;
+    }
+    
+    .step-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .theme-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tutorial-header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tutorial-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .content-box {
+        padding: 1rem;
+    }
+    
+    .code-block pre {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
+} 
