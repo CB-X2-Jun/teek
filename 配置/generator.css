@@ -281,7 +281,7 @@ body {
     text-decoration: none;
 }
 .side-list a:hover {
-    text-decoration: underline;
+    color: #007bff;
 }
 .generator-main {
     flex: 1;
@@ -347,4 +347,68 @@ body {
     .side-content {
         padding: 12px 0;
     }
+}
+
+.side-tips {
+    margin-top: 24px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.side-tips h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.side-tips ul {
+    margin: 0;
+    padding-left: 16px;
+    list-style: none;
+}
+
+.side-tips li {
+    margin-bottom: 6px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+
+.side-tips code {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+.skill-tag {
+    display: inline-block;
+    background: #e3f0ff;
+    color: #1976d2;
+    border-radius: 16px;
+    padding: 4px 14px;
+    font-size: 13px;
+    margin: 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border: 1px solid #b3d7ff;
+    user-select: none;
+}
+.skill-tag:hover {
+    background: #1976d2;
+    color: #fff;
+    border-color: #1976d2;
 } 

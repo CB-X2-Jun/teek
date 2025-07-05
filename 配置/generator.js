@@ -498,6 +498,24 @@ function renderField(field) {
 
 function renderTagsField(field) {
   const wrapper = document.createElement('div');
+  
+  // 添加说明文字
+  const tipDiv = document.createElement('div');
+  tipDiv.style.cssText = `
+    background: #f0f8ff;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #0056b3;
+  `;
+  tipDiv.innerHTML = `
+    <i class="fas fa-info-circle" style="margin-right: 4px;"></i>
+    <strong>提示：</strong>技能为空时不会显示。输入技能后按回车添加，点击标签可删除。
+  `;
+  wrapper.appendChild(tipDiv);
+  
   const input = document.createElement('input');
   input.type = 'text';
   input.placeholder = field.placeholder || '输入后回车添加';
