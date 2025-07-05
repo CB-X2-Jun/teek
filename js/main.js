@@ -122,19 +122,22 @@ class PersonalWebsite {
         
         const contactItems = [
             { icon: 'fas fa-envelope', text: this.config.contact.email },
-            { icon: 'fas fa-phone', text: this.config.contact.phone },
+            // 仅当 phone 有值时才添加
+            ...(this.config.contact.phone ? [{ icon: 'fas fa-phone', text: this.config.contact.phone }] : []),
             { icon: 'fas fa-map-marker-alt', text: this.config.contact.location },
             { icon: 'fas fa-globe', text: this.config.contact.website }
         ];
         
         contactItems.forEach(item => {
-            const contactItem = document.createElement('div');
-            contactItem.className = 'contact-item';
-            contactItem.innerHTML = `
-                <i class="${item.icon}"></i>
-                <span>${item.text}</span>
-            `;
-            contactContainer.appendChild(contactItem);
+            if (item.text) { // 只渲染有内容的项
+                const contactItem = document.createElement('div');
+                contactItem.className = 'contact-item';
+                contactItem.innerHTML = `
+                    <i class="${item.icon}"></i>
+                    <span>${item.text}</span>
+                `;
+                contactContainer.appendChild(contactItem);
+            }
         });
     }
 
