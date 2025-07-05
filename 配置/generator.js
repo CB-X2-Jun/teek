@@ -80,16 +80,12 @@ const form = document.getElementById('generator-form');
 
 function renderStep(direction = 0) {
   form.innerHTML = '';
-  // 步骤指示器
-  const indicator = document.createElement('div');
-  indicator.className = 'step-indicator';
-  for (let i = 0; i < steps.length; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'step-dot' + (i === currentStep ? ' active' : '');
-    indicator.appendChild(dot);
+  // 步骤进度条
+  const progressBar = document.getElementById('progress-bar');
+  if (progressBar) {
+    const percent = ((currentStep + 1) / steps.length) * 100;
+    progressBar.style.width = percent + '%';
   }
-  form.appendChild(indicator);
-
   // 步骤标题
   const stepTitle = document.createElement('h2');
   stepTitle.textContent = steps[currentStep].title;
