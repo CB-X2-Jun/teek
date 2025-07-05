@@ -354,23 +354,11 @@ function showCustomModal(title, fields, onSubmit) {
   btnGroup.innerHTML = '';
   
   const okBtn = document.createElement('button');
-  okBtn.type = 'submit';
+  okBtn.type = 'button';
   okBtn.className = 'btn';
   okBtn.textContent = '确定';
-  btnGroup.appendChild(okBtn);
-  
-  const cancelBtn = document.createElement('button');
-  cancelBtn.type = 'button';
-  cancelBtn.className = 'btn btn-secondary';
-  cancelBtn.textContent = '取消';
-  cancelBtn.onclick = () => modal.classList.remove('show');
-  btnGroup.appendChild(cancelBtn);
-  
-  // 重置表单提交事件
-  formEl.onsubmit = null;
-  formEl.onsubmit = function(e) {
-    e.preventDefault();
-    console.log('表单提交触发'); // 调试日志
+  okBtn.onclick = function() {
+    console.log('确定按钮点击'); // 调试日志
     
     const values = {};
     let valid = true;
@@ -387,7 +375,7 @@ function showCustomModal(title, fields, onSubmit) {
     
     if (!valid) {
       alert('请填写所有必填项');
-      return false;
+      return;
     }
     
     console.log('表单验证通过，准备提交:', values); // 调试日志
@@ -402,7 +390,19 @@ function showCustomModal(title, fields, onSubmit) {
         console.error('回调执行错误:', error); // 调试日志
       }
     }, 100);
-    
+  };
+  btnGroup.appendChild(okBtn);
+  
+  const cancelBtn = document.createElement('button');
+  cancelBtn.type = 'button';
+  cancelBtn.className = 'btn btn-secondary';
+  cancelBtn.textContent = '取消';
+  cancelBtn.onclick = () => modal.classList.remove('show');
+  btnGroup.appendChild(cancelBtn);
+  
+  // 移除表单提交事件，改为按钮点击事件
+  formEl.onsubmit = function(e) {
+    e.preventDefault();
     return false;
   };
   
