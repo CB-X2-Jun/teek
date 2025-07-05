@@ -166,14 +166,24 @@ function animateStep(direction) {
 }
 
 function onNext() {
+  // 清除之前的错误提示
+  clearFieldErrors();
+  
   // 简单校验
   const fields = steps[currentStep].fields;
+  let hasError = false;
+  
   for (const field of fields) {
     if (field.required && !formData[field.name]) {
-      alert(`请填写${field.label}`);
-      return;
+      showFieldError(field.name, `请填写${field.label}`);
+      hasError = true;
     }
   }
+  
+  if (hasError) {
+    return;
+  }
+  
   animateStep(1);
 }
 
@@ -346,6 +356,14 @@ function showCustomModal(title, fields, onSubmit) {
     input.name = field.name;
     input.placeholder = field.placeholder || '';
     input.required = field.required;
+    input.oninput = e => {
+      // 清除错误提示
+      if (e.target.style.borderColor === 'rgb(255, 68, 68)') {
+        e.target.style.borderColor = '';
+        const errorDiv = e.target.parentNode.querySelector('.field-error');
+        if (errorDiv) errorDiv.remove();
+      }
+    };
     group.appendChild(input);
     formEl.appendChild(group);
   });
@@ -360,21 +378,24 @@ function showCustomModal(title, fields, onSubmit) {
   okBtn.onclick = function() {
     console.log('确定按钮点击'); // 调试日志
     
+    // 清除之前的错误提示
+    clearModalFieldErrors();
+    
     const values = {};
-    let valid = true;
+    let hasError = false;
     
     fields.forEach(field => {
       const input = formEl.elements[field.name];
       const v = input ? input.value.trim() : '';
       if (field.required && !v) {
-        valid = false;
+        showModalFieldError(input, `请填写${field.label}`);
+        hasError = true;
         console.log('必填字段未填写:', field.name); // 调试日志
       }
       values[field.name] = v;
     });
     
-    if (!valid) {
-      alert('请填写所有必填项');
+    if (hasError) {
       return;
     }
     
@@ -429,7 +450,15 @@ function renderField(field) {
     input.placeholder = field.placeholder || '';
     input.value = formData[field.name] || '';
     input.required = field.required;
-    input.oninput = e => formData[field.name] = e.target.value;
+    input.oninput = e => {
+      formData[field.name] = e.target.value;
+      // 清除错误提示
+      if (e.target.style.borderColor === 'rgb(255, 68, 68)') {
+        e.target.style.borderColor = '';
+        const errorDiv = e.target.parentNode.querySelector('.field-error');
+        if (errorDiv) errorDiv.remove();
+      }
+    };
     group.appendChild(input);
   } else if (field.type === 'textarea') {
     const textarea = document.createElement('textarea');
@@ -437,7 +466,15 @@ function renderField(field) {
     textarea.placeholder = field.placeholder || '';
     textarea.value = formData[field.name] || '';
     textarea.required = field.required;
-    textarea.oninput = e => formData[field.name] = e.target.value;
+    textarea.oninput = e => {
+      formData[field.name] = e.target.value;
+      // 清除错误提示
+      if (e.target.style.borderColor === 'rgb(255, 68, 68)') {
+        e.target.style.borderColor = '';
+        const errorDiv = e.target.parentNode.querySelector('.field-error');
+        if (errorDiv) errorDiv.remove();
+      }
+    };
     group.appendChild(textarea);
   } else if (field.type === 'tags') {
     group.appendChild(renderTagsField(field));
@@ -576,6 +613,65 @@ function renderSocialsField() {
   addBtn.onclick = () => showSocialModal();
   wrapper.appendChild(addBtn);
   return wrapper;
+}
+
+// 错误提示辅助函数
+function showFieldError(fieldName, message) {
+  const input = document.querySelector(`input[name="${fieldName}"], textarea[name="${fieldName}"], select[name="${fieldName}"]`);
+  if (input) {
+    // 添加红色边框
+    input.style.borderColor = '#ff4444';
+    
+    // 创建或更新错误提示
+    let errorDiv = input.parentNode.querySelector('.field-error');
+    if (!errorDiv) {
+      errorDiv = document.createElement('div');
+      errorDiv.className = 'field-error';
+      errorDiv.style.color = '#ff4444';
+      errorDiv.style.fontSize = '12px';
+      errorDiv.style.marginTop = '4px';
+      input.parentNode.appendChild(errorDiv);
+    }
+    errorDiv.textContent = message;
+  }
+}
+
+function clearFieldErrors() {
+  // 清除所有错误提示
+  document.querySelectorAll('.field-error').forEach(el => el.remove());
+  document.querySelectorAll('input, textarea, select').forEach(el => {
+    el.style.borderColor = '';
+  });
+}
+
+function showModalFieldError(input, message) {
+  if (input) {
+    // 添加红色边框
+    input.style.borderColor = '#ff4444';
+    
+    // 创建或更新错误提示
+    let errorDiv = input.parentNode.querySelector('.field-error');
+    if (!errorDiv) {
+      errorDiv = document.createElement('div');
+      errorDiv.className = 'field-error';
+      errorDiv.style.color = '#ff4444';
+      errorDiv.style.fontSize = '12px';
+      errorDiv.style.marginTop = '4px';
+      input.parentNode.appendChild(errorDiv);
+    }
+    errorDiv.textContent = message;
+  }
+}
+
+function clearModalFieldErrors() {
+  const modal = document.getElementById('custom-modal');
+  if (modal) {
+    // 清除弹窗内的错误提示
+    modal.querySelectorAll('.field-error').forEach(el => el.remove());
+    modal.querySelectorAll('input, textarea, select').forEach(el => {
+      el.style.borderColor = '';
+    });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => renderStep(0));
