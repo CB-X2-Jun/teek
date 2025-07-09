@@ -1,44 +1,56 @@
 const CONFIG = {
-    "name": "Shine",
-    "title": "前端开发工程师",
+    "name": "CB_X2_Jun",
+    "title": "前端开发爱好者",
     "description": "热爱编程，专注web开发",
-    "avatar": "https://tc.z.wiki/autoupload/YWOgi7YZfm09uQYpPHO3Bn2CGrBAcpoqgZ2QrHjpPCCyl5f0KlZfm6UsKj-HyTuv/20250628/65K4/350X350/image.png",
-    "about": "我是一名充满激情的开发者，拥有5年的Web开发经验。我热爱学习新技术，喜欢解决复杂的技术问题。在工作中，我注重代码质量和用户体验，致力于创建优秀的软件产品。",
+    "avatar": "https://avatars.githubusercontent.com/u/184076746",
+    "about": "我是一名热爱编程的初中学生，有2年的开发经验。",
     "skills": [
-        "JavaScript", "TypeScript", "React", "Vue.js", "Node.js", 
-        "HTML5", "CSS3", "Git", "Webpack", "Vite"
+        "C++", "Python", "HTML5", "CSS3", "Git"
     ],
     "projects": [
         {
-            "title": "TEEK",
-            "description": "一款优秀的个人主页模板",
+            "title": "Markdown to RichText",
+            "description": "将 Markdown 转换成富文本",
             "technologies": [
                 "JavaScript"
             ],
-            "demo": "https://teek1.netlify.app/",
-            "github": "https://github.com/Eternity-Sky/teek"
+            "demo": "https://mdc.cb-x2-jun.run.place",
+            "github": "https://github.com/CB-X2-Jun/Markdown-to-RichText"
+        },
+        {
+            "title": "KaTeX Editor",
+            "description": "在线 KaTeX 编辑器",
+            "technologies": [
+                "JavaScript"
+            ],
+            "demo": "https://katexeditor.cb-x2-jun.run.place",
+            "github": "https://github.com/CB-X2-Jun/katex-editor"
         }
     ],
     "websites": [
         {
             "name": "Blog",
-            "description": "Shine 's Blog",
-            "url": "https://etoj.xyz/",
+            "description": "CB-X2-Jun's Blog",
+            "url": "https://cb-x2-jun.github.io/",
             "icon": "fas fa-blog"
         }
     ],
     "contact": {
-        "email": "tengyumo666@hotmail.com",
+        "email": "zzh20120518@outlook.com",
         "phone": "",
-        "location": "山东，中国",
-        "website": "https://etoj.xyz/"
+        "location": "上海，中国",
+        "website": "https://cb-x2-jun.github.io/"
     },
     "social": [
         {
-            "name": "Eternity-Sky",
-            "url": "https://github.com/Eternity-Sky",
+            "name": "CB-X2-Jun",
+            "url": "https://github.com/CB-X2-Jun",
             "icon": "fab fa-github"
-        }
+        },
+        {
+            "name": "CB-X2-Jun",
+            "url": "https://gitlab.com/CB-X2-Jun",
+            "icon": "fab fa-gitlab"
     ],
     "defaultTheme": "default",
     "navigation": [
